@@ -17,21 +17,21 @@
 			<div>Author</div>
 			<div>Page Count</div>
 			<div>Read?</div>
-			<div>Remove</div>
 		</div>	
+		<div id="library-list"></div>
 	</div>
-	<button>New Book</button>
-	<div id="form-modal">
+	<button onclick="showModal()">+</button>
+	<div id="form-modal" class="hide">
 		<form id="new-book-form">
 			<label for="form-title">Book Title</label>
-			<input type="text" id="form-title" name="form-title" placeholder="Book Title" />
+			<input type="text" id="form-title" name="form-title" placeholder="Book Title" required />
 			<label for="form-author">Book Author</label>
-			<input type="text" id="form-author" name="form-author" placeholder="Book Author" />
+			<input type="text" id="form-author" name="form-author" placeholder="Book Author" required />
 			<label for="form-pages">Page Count</label>
-			<input type="number" id="form-pages" name="form-pages" placeholder="Page Count" />
+			<input type="number" id="form-pages" name="form-pages" placeholder="Page Count" required />
 			<label for="form-read">Read?</label>
-			<input type="checkbox" id="form-read" name="form-read" />
-			<input type="submit" value="Add Book" />
+			<input type="checkbox" id="form-read" name="form-read" value="" />
+			<button type="button" onclick="addBookToLibrary()">Add Book</button>
 		</form>
 	</div>
 </body>
