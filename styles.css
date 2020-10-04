@@ -1,0 +1,12 @@
+body {
+	font-family: 'Piazzolla', serif;
+	font-weight: 400;
+	background-color: #EEE7DF;
+	color: #222;
+}
+
+#library > div {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	justify-items: center;
+}

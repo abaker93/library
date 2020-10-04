@@ -1,21 +1,51 @@
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    let readText = '';
-    
-    if(this.read === true) {
-        readText = 'already read'
-    } else {
-        readText = 'not read yet'
-    }
+let library = [
+	{
+		title: 'The Hobbit',
+		author: 'J.R.R. Tolkien',
+		pages: 295,
+		read: false
+	},
+	{
+		title: 'Lord of the Rings',
+		author: 'Tolkien',
+		pages: 100,
+		read: true
+	}
+];
+const libraryList = document.getElementById('library');
 
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${readText}`
-    }
+function Book(title, author, pages, read) {
+	this.title = title;
+	this.author = author;
+	this.pages = pages;
+	this.read = read;
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
+Book.prototype.readText = function() {
+	if(this.read) {
+		return 'read';
+	} else {
+		return 'not read';
+	}
+}
 
-console.log(theHobbit.info());
+function addBookToLibrary() {
+	
+}
+
+function displayBooks() {
+	for(let i=0; i<library.length; i++) {
+		const libraryItem = document.createElement('div');
+		libraryItem.classList.add('library-row');
+		libraryItem.setAttribute('data-index', i);
+		libraryItem.innerHTML = 
+			`<div>${library[i].title}</div>
+			<div>${library[i].author}</div>
+			<div>${library[i].pages}</div>
+			<div>${library[i].read}</div>
+			<button>X</button>`;
+		libraryList.append(libraryItem);
+	}
+}
+
+displayBooks();

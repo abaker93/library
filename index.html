@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Mini Library</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>My Mini Library</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!--stylesheets-->
 	<link href="reset.css" rel="stylesheet" />
 	<link href="styles.css" rel="stylesheet" />
+	<!--google fonts-->
+	<link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@0,400;1,100&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <h1>Hello World!</h1>
+	<div id="library">
+		<div id="library-header">
+			<div>Title</div>
+			<div>Author</div>
+			<div>Page Count</div>
+			<div>Read?</div>
+			<div>Remove</div>
+		</div>	
+	</div>
+	<button>New Book</button>
+	<div id="form-modal">
+		<form id="new-book-form">
+			<label for="form-title">Book Title</label>
+			<input type="text" id="form-title" name="form-title" placeholder="Book Title" />
+			<label for="form-author">Book Author</label>
+			<input type="text" id="form-author" name="form-author" placeholder="Book Author" />
+			<label for="form-pages">Page Count</label>
+			<input type="number" id="form-pages" name="form-pages" placeholder="Page Count" />
+			<label for="form-read">Read?</label>
+			<input type="checkbox" id="form-read" name="form-read" />
+			<input type="submit" value="Add Book" />
+		</form>
+	</div>
 </body>
 <script src="main.js"></script>
 </html>
