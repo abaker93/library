@@ -52,6 +52,7 @@ function addBookToLibrary() {
 		library.push(new Book(a, b, c, d));
 		displayBooks();
 		clearForm();
+		hideModal();
 	} else {
 		alert('Form not filled out')
 	}
