@@ -1,4 +1,35 @@
-let library = [];
+let library = [
+	{
+		title: 'test1',
+		author: 'test',
+		pages: 123,
+		read: true
+	},
+	{
+		title: 'test2',
+		author: 'test',
+		pages: 123,
+		read: true
+	},
+	{
+		title: 'test3',
+		author: 'test',
+		pages: 123,
+		read: true
+	},
+	{
+		title: 'test4',
+		author: 'test',
+		pages: 123,
+		read: true
+	},
+	{
+		title: 'test5',
+		author: 'test',
+		pages: 123,
+		read: true
+	}
+];
 const libraryList = document.getElementById('library-list');
 const formModal = document.getElementById('form-modal');
 
@@ -26,19 +57,21 @@ function addBookToLibrary() {
 
 function displayBooks() {
 	libraryList.innerHTML = '';
+	
 	for(let i=0; i<library.length; i++) {
 		const libraryItem = document.createElement('div');
 		libraryItem.classList.add('library-row');
-		libraryItem.setAttribute('data-index', i);
 		libraryItem.innerHTML = 
 			`<div>${library[i].title}</div>
 			<div>${library[i].author}</div>
 			<div>${library[i].pages}</div>
 			<div>${library[i].read}</div>
-			<button class="remove-btn" onclick="removeBook()">X</button>`;
+			<button class="remove-btn" onclick="removeBook(${i})"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg></button>`;
 		libraryList.append(libraryItem);
 	}
 }
+
+
 
 displayBooks();
 
@@ -49,24 +82,17 @@ function clearForm() {
 	document.getElementById('form-read').checked = false;
 }
 
-// function removeBook() {
-// 	const removeBtns = document.querySelectorAll('.remove-btn');
-// 	const libraryRows = document.querySelectorAll('.library-row');
-// 	console.log(removeBtns);
-// 	console.log(libraryRows.length);
-
-// 	removeBtns.forEach(btn => {
-// 		btn.addEventListener('click', e => {
-// 			let bookID = e.target.parentElement.getAttribute('data-index');
-// 			console.log(bookID);
-// 			for (let i=0; i<libraryRows.length; i++) {
-// 				console.log(libraryRows.dataset);
-// 			}
-// 		})
-// 	})
-// }
+function removeBook(i) {
+	library.splice(i, 1);
+	displayBooks();
+}
 
 function showModal() {
 	formModal.classList.remove('hide');
 	formModal.classList.add('show');
+}
+
+function hideModal() {
+	formModal.classList.remove('show');
+	formModal.classList.add('hide');
 }

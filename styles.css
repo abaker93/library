@@ -5,15 +5,13 @@ body {
 	color: #222;
 }
 
+/* svg { height: 16px; }*/
+
 #library #library-header,
 #library #library-list > div {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 	justify-items: center;
-}
-
-button.remove-btn {
-	display: none;
 }
 
 .hide { display: none; }
